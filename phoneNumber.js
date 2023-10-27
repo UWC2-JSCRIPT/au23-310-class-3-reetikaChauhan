@@ -34,20 +34,21 @@ console.log(testPhoneNumber('(206) 33-4444')); // should return false, missing a
 // the phone number.
 // Returns an object in the format {areaCode, phoneNumber}
 const parsePhoneNumber = (phoneNumber) => {
-    const regExppattern =/^(\(\d{3}\) |\d{3}-|\d{3} )\d{3}-\d{4}$/
-    const phonegroups = regExppattern.exec(phoneNumber)
-    if (phonegroups) {
-        // Extract the area code and phone number
-        const areaCode = phonegroups[1].replace(/[\(\)\s-]/g, ''); // Remove any non-digit characters
-        const phoneNumber = phonegroups[2].replace('-', '');
-    
-        // Return the result as an object
-        return { areaCode, phoneNumber };
-      } else {
-        // Return null if the input format is not as expected
-        return null;
-      }
+  const regExppattern =/^(\(\d{3}\) |\d{3}-|\d{3} )\d{3}-\d{4}$/
+  const phonegroups = regExppattern.exec(phoneNumber)
+  if (phonegroups) {
+      // Extract the area code and phone number
+      const areaCode = phonegroups[1].replace(/[\(\)\s-]/g, ''); // Remove any non-digit characters
+      let phoneNumber = phonegroups[0].replace(/[\(\)\s-]/g, '');
+      phoneNumber = phoneNumber.slice(3,10)
+      // Return the result as an object
+      return { areaCode, phoneNumber };
+    } else {
+      // Return null if the input format is not as expected
+      return null;
     }
+  }
+
 
 
 

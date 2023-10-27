@@ -52,21 +52,3 @@ console.log(`${eliminatedPlayer.name} has been eliminated!`);
 
 
 
-class SpaceShip {
-  constructor(name , topSpeed){
-    this.name = name
-    this.topSpeed = topSpeed
-  }
-
-  accelerate(){
-    const {name , topSpeed} = this
-    console.log(`${name} moving to ${topSpeed}`)
-  }
-}
-
-const ship1 = new SpaceShip('Nasa',5000 )
-const ship2 = new SpaceShip('SpaceX',6000 )
-const ship3 = new SpaceShip('ISRO',7000 )
-ship1.accelerate()
-ship2.accelerate()
-ship3.accelerate()

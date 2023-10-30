@@ -3,8 +3,8 @@
 
 
 // const attack = function(attackingPlayer,defendingPlayer,baseDamage,variableDamage){
-//   let randomdamage = Math.floor(Math.random() * (variableDamage + 1))
-//   let totaldamage = baseDamage + randomdamage
+//   const randomdamage = Math.floor(Math.random() * (variableDamage + 1))
+//   const totaldamage = baseDamage + randomdamage
 //   defendingPlayer.health -= totaldamage
 //   return (`${attackingPlayer.name} hits ${defendingPlayer.name} for ${totaldamage} damage`)
 
@@ -21,16 +21,16 @@ const player2 = {
   health:10,
   name:'Sophan'
 }
-console.log(attack(player1,player2,1,4))
 
 //3. Refactor attack function to an arrow function.  Comment out function above.
 const attack = (attackingPlayer,defendingPlayer,baseDamage,variableDamage) => {
-  let randomdamage = Math.floor(Math.random() * (variableDamage + 1))
-  let totaldamage = baseDamage + randomdamage
+  const randomdamage = Math.floor(Math.random() * (variableDamage + 1))
+  const totaldamage = baseDamage + randomdamage
   defendingPlayer.health -= totaldamage
   return (`${attackingPlayer.name} hits ${defendingPlayer.name} for ${totaldamage} damage`)
 
 }
+console.log(attack(player1,player2,1,4))
 
 
 // DO NOT MODIFY THE CODE BELOW THIS LINE

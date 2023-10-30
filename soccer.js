@@ -37,7 +37,8 @@ console.log(getTotalPoints('wwdl')); // should equal 7
 // i.e. {name: 'Sounders', results: 'wwlwdd'}
 // Logs each entry to the console as "Team name: points"
 
-const orderTeams = (...items) => {
+const orderTeams = function () {
+  const items = Array.from(arguments)
   items.forEach((item) => {
        let points = getTotalPoints(item.results)
        console.log(`${item.name} : ${points}`)

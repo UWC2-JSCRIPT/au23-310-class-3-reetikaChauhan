@@ -2,14 +2,35 @@
 // attackingPlayer, defendingPlayer, baseDamage, variableDamage
 
 
+// const attack = function(attackingPlayer,defendingPlayer,baseDamage,variableDamage){
+//   const randomdamage = Math.floor(Math.random() * (variableDamage + 1))
+//   const totaldamage = baseDamage + randomdamage
+//   defendingPlayer.health -= totaldamage
+//   return (`${attackingPlayer.name} hits ${defendingPlayer.name} for ${totaldamage} damage`)
+
+// }
+
 
 // 2. Create player1 and player2 objects below
 // Each should have a name property of your choosing, and health property equal to 10
+const player1 = {
+  health: 10,
+  name : 'Merlin'
+}
+const player2 = {
+  health:10,
+  name:'Sophan'
+}
 
+//3. Refactor attack function to an arrow function.  Comment out function above.
+const attack = (attackingPlayer,defendingPlayer,baseDamage,variableDamage) => {
+  const randomdamage = Math.floor(Math.random() * (variableDamage + 1))
+  const totaldamage = baseDamage + randomdamage
+  defendingPlayer.health -= totaldamage
+  return (`${attackingPlayer.name} hits ${defendingPlayer.name} for ${totaldamage} damage`)
 
-
-// 3. Refactor attack function to an arrow function.  Comment out function above.
-
+}
+console.log(attack(player1,player2,1,4))
 
 
 // DO NOT MODIFY THE CODE BELOW THIS LINE
@@ -28,3 +49,6 @@ while (player1.health >= 1 && player2.health >= 1 && preventInfiniteLoop > 0) {
 }
 const eliminatedPlayer = player1.health <= 0 ? player1 : player2;
 console.log(`${eliminatedPlayer.name} has been eliminated!`);
+
+
+
